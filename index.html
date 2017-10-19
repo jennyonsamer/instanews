@@ -1,7 +1,37 @@
-<html>
-  <head>
-      <meta charset="utf-8">
-    <title>
-    </title>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+      Instanews - NYT News Reader
+  </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+
+<body>
+  <img src="nyt-logo.svg" alt="logo">
+  <p>Choose a section:
+  </p>
+  <form action="">
+    <select id="select-article" name="topic">
+      <option value="home">Home</option>
+      <option value="arts">Arts</option>
+      <option value="business">Business</option>
+      <option value="sports">Sports</option>
+      <option value="technology">Technology</option>
+      <option value="fashion">Fashion</option>
+    </select>
+  </form>
+
+  <div id="content"></div>
+
+
+  <script src="build/js/script.min.js"></script>
+</body>
+
 </html>
