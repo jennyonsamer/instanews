@@ -14,11 +14,13 @@
 </head>
 
 <body>
-  <img src="nyt-logo.svg" alt="logo">
-  <p>Choose a section:
-  </p>
-  <form action="">
-    <select id="select-article" name="topic">
+  <header>
+    <img class"logo" src="nyt-logo.svg" alt="logo">
+    <p>Choose a section:
+    </p>
+    <form action="">
+      <select id="select-article" name="topic">
+      <option value>Sections ...</option>
       <option value="home">Home</option>
       <option value="arts">Arts</option>
       <option value="business">Business</option>
@@ -26,9 +28,24 @@
       <option value="technology">Technology</option>
       <option value="fashion">Fashion</option>
     </select>
-  </form>
+    </form>
+  </header>
 
-  <div id="content"></div>
+  <div id="content">
+  </div>
+  <div id="loader">
+    <img src="/ajax-loader.gif" id="ajax-loader">
+  </div>
+
+  <footer>
+    <div>
+      <p>
+        © Copyright 2016
+        <span class="upper">Instanews</span>
+      </p>
+    </div>
+  </footer>
+
 
 
   <script src="build/js/script.min.js"></script>

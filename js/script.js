@@ -1,8 +1,15 @@
 // Built by LucyBot. www.lucybot.com
 
+
+$('#ajax-loader').hide();
+
+
 $('#select-article').on('change', function () {
 
+
+  $('#ajax-loader').show();
   $('#content').empty();
+  
 
   var selectVal = $('#select-article').val();
 
@@ -10,31 +17,37 @@ $('#select-article').on('change', function () {
   url += '?' + $.param({
     'api-key': '80315f98187c49169c887403d2c3f766'
   });
+
   $.ajax({
     url: url,
     method: 'GET',
   }).done(function (data) {
 
+    
     console.log(data.results);
 
     // var sum = 0;
+  //  $.filter(data.results,)
 
-    $.each(data.results, function( index, value ) {
-      
-      // sum += value;
+    $.each(data.results, function (index, value) {
 
-    $('#content').filter( ':odd' ).css( 'background-color', 'red' );
-          // console.log(value.title);
-          // $('#content').slice()
+      console.log(value.multimedia);
 
-          $('#content').append('<li>' + value.title + '</li>');
-          if (index === 11) {
-            return false;
-          }
+      if(value.multimedia.length){
+      var output = '';
+      output += '<li>' + value.abstract + '</li>';
+      output += '<img src=' + value.multimedia[2].url + '>';
 
+      $('#content').append(output);
+
+    }
+
+      if (index >= 11) {
+        return false;
+      }
 
     });
-   
+
 
     // var resultCount = data.results.length;
     // console.log(resultCount);
@@ -59,8 +72,14 @@ $('#select-article').on('change', function () {
 
     // console.log(data.results[0].title);
 
-  }).fail(function (err) {
+  })
+  .always(function(){
 
+    $('#ajax-loader').hide();
+
+  })
+  .fail(function (err) {
+    alert('an error occurred');
     throw err;
 
   });

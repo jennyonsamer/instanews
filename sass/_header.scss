@@ -1,0 +1,19 @@
+header {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include tablet{
+    flex-direction: row;
+  }
+
+}
+
+select {
+  background: white;
+}
+
+#slect-article {
+  border: none;
+}
+

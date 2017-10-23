@@ -5,6 +5,18 @@ body {
   color: $white;
 }
 
-#slect-article {
-  border: none;
-} 
+#content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+  width: auto;
+}
+
+#loader {
+  width: 100%;
+  #ajax-loader {
+    width: 30px;
+    position: relative;
+  }
+}
