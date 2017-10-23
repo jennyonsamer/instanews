@@ -1,11 +1,10 @@
-$color:black;
-
+$black:black;
+$white: white;
 body {
-  background-color:$color;
-  color: $color;
+  background-color: $black;
+  color: $white;
 }
 
-p {
-  color: $color;
-
-}
+#slect-article {
+  border: none;
+} 

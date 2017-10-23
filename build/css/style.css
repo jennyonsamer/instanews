@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  color: black; }
+  color: white; }
 
-p {
-  color: black; }
+#slect-article {
+  border: none; }
