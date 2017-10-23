@@ -79,7 +79,7 @@ $('#select-article').on('change', function () {
 
   })
   .fail(function (err) {
-    alert('an error occurred');
+    alert('Please choose a category');
     throw err;
 
   });
