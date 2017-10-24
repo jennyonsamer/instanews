@@ -10,7 +10,7 @@ $('#select-article').on('change', function () {
   $('#ajax-loader').show();
   $('#content').empty();
 
-  if(!$('.siteheader').hasClass('siteheader-small')){
+  if (!$('.siteheader').hasClass('siteheader-small')) {
     $('.siteheader').addClass('siteheader-small');
   }
 
@@ -22,73 +22,74 @@ $('#select-article').on('change', function () {
   });
 
   $.ajax({
-    url: url,
-    method: 'GET',
-  }).done(function (data) {
+      url: url,
+      method: 'GET',
+    }).done(function (data) {
 
-    
-    console.log(data.results);
 
-    // var sum = 0;
-  //  $.filter(data.results,)
+      console.log(data.results);
 
-    $.each(data.results, function (index, value) {
+      // var sum = 0;
+      //  $.filter(data.results,)
 
-      console.log(value);
+      $.each(data.results, function (index, value) {
 
-      if(value.multimedia.length){
-      var output = '';
-      output += '<a href="' + value.url + '"><li>' + value.abstract;
-      output += '<img src=' + value.multimedia[2].url + '>';
-      output += '</li></a>';
+        console.log(value);
 
-      // <a href="' + value.url '"> v</a>
+        if (value.multimedia.length) {
+          var output = '';
+          output += '<div style="background-image:url( ' + value.multimedia[2].url + ')"><a href="' + value.url + ')">';
+          // output += '<img src=' + value.multimedia[2].url + '>';
+          output += '<p> '+ value.abstract +' </p>';
+          output += '</a></div>';
 
-      $('#content').append(output);
+          // <a href="' + value.url '"> v</a>
 
-    }
+          $('#content').append(output);
 
-      if (index >= 11) {
-        return false;
-      }
+        }
+
+        if (index >= 11) {
+          return false;
+        }
+
+      });
+
+
+      // var resultCount = data.results.length;
+      // console.log(resultCount);
+
+
+      //   for (var i = 0; i < resultCount; i++){
+      //       console.log('test');
+      //     // total += data.results[i].title;
+      //   }
+
+      // $('#content').append('<li>' + data.results[total].title + '</li>')
+
+      // $.each(data.results, function(index, object){
+      //   console.log(object);
+
+      //   // var output = '';
+      //   output += '<h1>' + data.title + '</h1>';
+
+      //   $('#content').append(output);
+
+      // });
+
+      // console.log(data.results[0].title);
+
+    })
+    .always(function () {
+
+      $('#ajax-loader').hide();
+
+    })
+    .fail(function (err) {
+      alert('Please choose a category');
+      throw err;
 
     });
-
-
-    // var resultCount = data.results.length;
-    // console.log(resultCount);
-
-
-    //   for (var i = 0; i < resultCount; i++){
-    //       console.log('test');
-    //     // total += data.results[i].title;
-    //   }
-
-    // $('#content').append('<li>' + data.results[total].title + '</li>')
-
-    // $.each(data.results, function(index, object){
-    //   console.log(object);
-
-    //   // var output = '';
-    //   output += '<h1>' + data.title + '</h1>';
-
-    //   $('#content').append(output);
-
-    // });
-
-    // console.log(data.results[0].title);
-
-  })
-  .always(function(){
-
-    $('#ajax-loader').hide();
-
-  })
-  .fail(function (err) {
-    alert('Please choose a category');
-    throw err;
-
-  });
 
 
 });
