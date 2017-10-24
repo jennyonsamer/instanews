@@ -134,6 +134,8 @@ body {
           justify-content: center;
   list-style: none;
   width: auto; }
+  #content a {
+    text-decoration: none; }
 
 #loader {
   width: 100%;
@@ -142,17 +144,32 @@ body {
     width: 30px;
     position: relative; }
 
+.form {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  .form p {
+    padding-bottom: 1rem; }
+  .form #select-article {
+    width: 8rem;
+    height: 2rem;
+    font-size: 1rem; }
+
+li {
+  position: relative; }
+
 .article {
-  width: 100%;
+  width: 100vw;
   height: 70vh;
   background-position: 50%;
   background-size: cover; }
   .article p {
+    position: absolute;
     text-decoration: none;
     font-family: 'Open Sans';
     color: white;
     line-height: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.6); }
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0; }
 
 .copyright {
   display: -webkit-box;

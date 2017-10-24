@@ -28,27 +28,23 @@ $('#select-article').on('change', function () {
 
 
       // slice and filter
-      var sliced = data.results.filter(function (item) {
-        if (item.multimedia.length == 0);
-        return item.multimedia.length;
-      }).slice(0, 12);
-      console.log(sliced);
-      
-      console.log(data.results);
-
-      // var sum = 0;
-      //  $.filter(data.results,)
-
-      $.each(sliced, function (index, value) {
+      // var sliced = data.results.filter(function (item) {
+      //   if (item.multimedia.length == 0);
+      //   return item.multimedia.length;
+      // }).slice(0, 12);
+      // console.log(sliced);
+     
+      $.each(data.results, function (index, value) {
 
         console.log(value);
 
         if (value.multimedia.length) {
           var output = '';
+          output += '<li>'
           output += '<a href="' + value.url + '">'
           output += '<div class="article" style="background-image:url(' + value.multimedia[4].url + ')">';
           output += '<p> '+ value.abstract +' </p>';
-          output += '</div></a>';
+          output += '</div></a></li>';
 
           $('#content').append(output);
 
