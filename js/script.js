@@ -27,12 +27,19 @@ $('#select-article').on('change', function () {
     }).done(function (data) {
 
 
+      // slice and filter
+      var sliced = data.results.filter(function (item) {
+        if (item.multimedia.length == 0);
+        return item.multimedia.length;
+      }).slice(0, 12);
+      console.log(sliced);
+      
       console.log(data.results);
 
       // var sum = 0;
       //  $.filter(data.results,)
 
-      $.each(data.results, function (index, value) {
+      $.each(sliced, function (index, value) {
 
         console.log(value);
 
@@ -42,8 +49,6 @@ $('#select-article').on('change', function () {
           output += '<div class="article" style="background-image:url(' + value.multimedia[4].url + ')">';
           output += '<p> '+ value.abstract +' </p>';
           output += '</div></a>';
-
-          // <a href="' + value.url '"> v</a>
 
           $('#content').append(output);
 

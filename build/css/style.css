@@ -145,13 +145,14 @@ body {
 .article {
   width: 100%;
   height: 70vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-decoration: none; }
-  .article a {
+  background-position: 50%;
+  background-size: cover; }
+  .article p {
     text-decoration: none;
     font-family: 'Open Sans';
-    color: white; }
+    color: white;
+    line-height: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.6); }
 
 .copyright {
   display: -webkit-box;
