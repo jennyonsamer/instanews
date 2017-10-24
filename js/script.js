@@ -38,9 +38,9 @@ $('#select-article').on('change', function () {
 
       if(value.multimedia.length){
       var output = '';
-      output += '<div style="background-image: url('+ value.multimedia[2].url +'">' + value.abstract;
+      output += '<a href="' + value.url + '"><li>' + value.abstract;
       output += '<img src=' + value.multimedia[2].url + '>';
-      output += '</div>';
+      output += '</li></a>';
 
       // <a href="' + value.url '"> v</a>
 
