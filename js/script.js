@@ -9,7 +9,10 @@ $('#select-article').on('change', function () {
 
   $('#ajax-loader').show();
   $('#content').empty();
-  
+
+  if(!$('.siteheader').hasClass('siteheader-small')){
+    $('.siteheader').addClass('siteheader-small');
+  }
 
   var selectVal = $('#select-article').val();
 
@@ -31,12 +34,15 @@ $('#select-article').on('change', function () {
 
     $.each(data.results, function (index, value) {
 
-      console.log(value.multimedia);
+      console.log(value);
 
       if(value.multimedia.length){
       var output = '';
-      output += '<li>' + value.abstract + '</li>';
+      output += '<div style="background-image: url('+ value.multimedia[2].url +'">' + value.abstract;
       output += '<img src=' + value.multimedia[2].url + '>';
+      output += '</div>';
+
+      // <a href="' + value.url '"> v</a>
 
       $('#content').append(output);
 

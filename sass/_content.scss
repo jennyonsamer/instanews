@@ -15,8 +15,13 @@ body {
 
 #loader {
   width: 100%;
+  text-align: center;
   #ajax-loader {
     width: 30px;
     position: relative;
   }
+}
+
+img {
+  position: relative;
 }
