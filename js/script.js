@@ -38,10 +38,10 @@ $('#select-article').on('change', function () {
 
         if (value.multimedia.length) {
           var output = '';
-          output += '<div class="article" style="background-image:url(' + value.multimedia[4].url + ')"><a href="' + value.url + '">';
-          // output += '<img src=' + value.multimedia[2].url + '>';
+          output += '<a href="' + value.url + '">'
+          output += '<div class="article" style="background-image:url(' + value.multimedia[4].url + ')">';
           output += '<p> '+ value.abstract +' </p>';
-          output += '</a></div>';
+          output += '</div></a>';
 
           // <a href="' + value.url '"> v</a>
 
