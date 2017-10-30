@@ -40,7 +40,7 @@ $('#select-article').on('change', function () {
           var output = '';
           output += '<div class="article" style="background-image:url(' + value.multimedia[4].url + ')"><a href="' + value.url + '">';
           // output += '<img src=' + value.multimedia[2].url + '>';
-          output += '<p> '+ value.abstract +' </p>';
+          output += '<p> ' + value.abstract + ' </p>';
           output += '</a></div>';
 
           // <a href="' + value.url '"> v</a>
