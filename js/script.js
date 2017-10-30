@@ -16,7 +16,7 @@ $('#select-article').on('change', function () {
 
   var selectVal = $('#select-article').val();
 
-  var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectVal + '.json';
+  const url = 'https://api.nytimes.com/svc/topstories/v2/' + selectVal + '.json';
   url += '?' + $.param({
     'api-key': '80315f98187c49169c887403d2c3f766'
   });

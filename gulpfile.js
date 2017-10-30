@@ -8,7 +8,16 @@ var uglify = require('gulp-uglify'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   cssnano = require('gulp-cssnano'),
-  prettyError = require('gulp-prettyerror');
+  prettyError = require('gulp-prettyerror'),
+  babel = require('gulp-babel'),
+  input = 'src/index/.js',
+  output = 'dist';
+  
+  gulp.task('babel', () => {
+    return gulp.src('./js/*.js')
+        .pipe(babel())
+        .pipe(gulp.dest(output));
+  });
 
 gulp.task('sass', function () {
   gulp.src('./sass/style.scss')
